@@ -46,7 +46,7 @@ COPY licenses /licenses
 RUN set -x && \
     yum clean all && \
     REPOLIST=rhel-7-server-rpms,rhel-7-server-optional-rpms,rhel-7-server-thirdparty-oracle-java-rpms \
-    INSTALL_PKGS="tar java-1.8.0-oracle-devel" && \
+    INSTALL_PKGS="tar java-1.8.0-openjdk-devel" && \
     yum -y update-minimal --disablerepo "*" --enablerepo ${REPOLIST} --setopt=tsflags=nodocs \
       --security --sec-severity=Important --sec-severity=Critical && \
     yum -y install --disablerepo "*" --enablerepo ${REPOLIST} --setopt=tsflags=nodocs ${INSTALL_PKGS} && \
