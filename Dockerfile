@@ -42,6 +42,8 @@ COPY help.1 uid_entrypoint /
 
 COPY licenses /licenses
 
+COPY probes /usr/local/bin
+
 # Install Runtime Environment
 RUN set -x && \
     yum clean all && \
